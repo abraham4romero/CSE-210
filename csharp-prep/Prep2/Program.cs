@@ -20,6 +20,6 @@ class Program
             ARgrade = "F";
         }
 
-        Console.WriteLine($"With {ARinput}, your grade is {ARgrade}.");
+        Console.WriteLine($"With {ARinput} percent, your grade is {ARgrade}.");
     }
 }
