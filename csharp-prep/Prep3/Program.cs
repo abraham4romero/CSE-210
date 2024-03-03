@@ -10,8 +10,13 @@ class Program
         while(PlayAgain) {
 
             bool guess = false;
-            Console.WriteLine("What is the magic number? ");
-            int magicNum = int.Parse(Console.ReadLine());
+            
+            /*Console.WriteLine("What is the magic number? ");
+            int magicNum = int.Parse(Console.ReadLine()); */
+
+            Random randomGenerator = new Random();
+            int magicNum = randomGenerator.Next(1, 101);
+
             int count = 0;
 
             while(guess == false) {
