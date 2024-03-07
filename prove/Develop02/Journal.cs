@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Journal
 {
@@ -22,7 +23,7 @@ class Journal
         string[] lines = System.IO.File.ReadAllLines(file);
         foreach (string line in lines)
             {
-                Entries.Add(line);
+                //Entries.Add(line);
             }
     }
 }
