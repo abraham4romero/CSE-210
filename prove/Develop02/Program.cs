@@ -5,13 +5,13 @@ class Program
     static void Main(string[] args)
     {
         List<string> _promptList = new List<string>();
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
+        _promptList.Add("If you could fly, where would you go first?");
+        _promptList.Add("What is something you've done really well today?");
+        _promptList.Add("If you could change one thing about today, what would it be?");
+        _promptList.Add("If you could go back in time to watch one of your past experiences, what would you go back to see?");
+        _promptList.Add("What was your favorite part of today?");
+        _promptList.Add("Who is your best friend and why?");
+        _promptList.Add("What is the most beautiful thing you've seen today?");
         _promptList.Add("");
         _promptList.Add("");
         _promptList.Add("");
@@ -56,17 +56,31 @@ class Program
 
         Console.WriteLine(_prompt);
         entry1._response = Console.ReadLine();
+
+        Journal _journal = new Journal();
+        _journal.Entries.Add(entry1);
     }
     
     static void Display() {
-
+        Journal _journal = new Journal();
+        _journal.Display();
     }
 
     static void Load() {
+        Console.WriteLine("Which file would you like to load from?");
+        string file = Console.ReadLine();
 
+        Journal _j = new Journal();
+        _j.Load(file);
+        Console.WriteLine("Journal Loaded");
     }
 
     static void Save() {
+        Console.WriteLine("Which file would you like to save to?");
+        string file = Console.ReadLine();
 
+        Journal _j = new Journal();
+        _j.Save(file);
+        Console.WriteLine("Journal Saved");
     }
 }
