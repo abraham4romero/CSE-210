@@ -25,9 +25,10 @@ class Journal
         string[] lines = System.IO.File.ReadAllLines(file);
         int x = 0;
         foreach (string line in lines) {
-            if (((x+1)%4) == 0) {
+            if (((x+1)%5) == 0) {
                 Entry entry = new Entry();
-                entry._date = lines[x-3];
+                entry._date = lines[x-4];
+                entry._weather = lines[x-3];
                 entry._prompt = lines[x-2];
                 entry._response = lines[x-1];
                 Entries.Add(entry);

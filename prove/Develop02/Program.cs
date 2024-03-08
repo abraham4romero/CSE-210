@@ -13,11 +13,11 @@ class Program
         _promptList.Add("What was your favorite part of today?");
         _promptList.Add("Who is your best friend and why?");
         _promptList.Add("What is the most beautiful thing you've seen today?");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
-        _promptList.Add("");
+        _promptList.Add("Would you rather be a mouse or a dragon?");
+        _promptList.Add("Do you prefer chocolate or peanut butter?");
+        _promptList.Add("What was the name of your first pet?");
+        _promptList.Add("If you had a pet rhino, what would you name it?");
+        _promptList.Add("What would be the best way to spend the last day of your life?");
         var random = new Random();
 
         Console.WriteLine("Welcome to the Journal Program!");
@@ -55,7 +55,8 @@ class Program
         Entry entry1 = new Entry();
         entry1._prompt = _prompt;
         entry1._date = date;
-
+        Console.WriteLine("What is today's weather?");
+        entry1._weather = Console.ReadLine();
         Console.WriteLine(_prompt);
         entry1._response = Console.ReadLine();
         return entry1;
