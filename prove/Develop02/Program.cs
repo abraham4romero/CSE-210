@@ -50,13 +50,13 @@ class Program
 
     static Entry Entry(string _prompt) {
         DateTime d = DateTime.Today;
-        string date = d.ToString("dd-MM-yyyy");
+        string date = d.ToString("MM-dd-yyyy");
 
         Entry entry1 = new Entry();
         entry1._prompt = _prompt;
         entry1._date = date;
         Console.WriteLine("What is today's weather?");
-        entry1._weather = Console.ReadLine();
+        entry1._weather = "Today\'s weather is: " + Console.ReadLine();
         Console.WriteLine(_prompt);
         entry1._response = Console.ReadLine();
         return entry1;
@@ -76,7 +76,7 @@ class Program
         //Console.WriteLine(file);
         using (StreamWriter File = new StreamWriter(file)) {
             foreach(Entry entry in _journal.Entries) {
-                string a = entry.ToString();
+                string a = entry.Stringify();
                 File.WriteLine(a);
                 //Console.WriteLine(a);
             }

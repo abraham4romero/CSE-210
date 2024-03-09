@@ -10,12 +10,12 @@ class Entry
     public string _response;
 
     public void Display() {
-        Console.WriteLine($"{_date}\nToday\'s weather is: {_weather}\n{_prompt}\n{_response}\n");
+        Console.WriteLine($"{_date}\n{_weather}\n{_prompt}\n{_response}\n");
     }
 
 
-    public string ToString() {
-        string a = $"{_date}\nToday\'s weather is: {_weather}\n{_prompt}\n{_response}\n";
+    public string Stringify() {
+        string a = $"{_date}\n{_weather}\n{_prompt}\n{_response}\n";
         return a;
     }
 }
