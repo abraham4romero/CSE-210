@@ -39,7 +39,7 @@ class Program
                     break;
                 default:
                     Console.WriteLine("Please enter a valid option.");
-                    Thread.Sleep(500);
+                    Thread.Sleep(2000);
                     break;
 
             }
