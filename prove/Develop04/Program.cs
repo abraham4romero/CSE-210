@@ -1,6 +1,12 @@
 using System;
 using System.Reflection;
 
+/*
+To exceed requirements, I added a log
+that tracks how many activities are completed.
+I also used many different pauses or delays.
+*/
+
 class Program
 {
     static void Main(string[] args)
