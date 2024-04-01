@@ -1,3 +1,8 @@
+/*
+To exceed the requirements, I added a goal count at the top that
+shows how many goals the user has completed!
+*/
+
 using System;
 using System.Security.Cryptography.X509Certificates;
 
