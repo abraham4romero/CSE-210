@@ -35,7 +35,21 @@ public class Checklist : Goal
         }
     }
 
+    public void SetVars(bool a, bool b, int c) {
+        _ending = a;
+        _complete = b;
+        _count = c;
+    }
+
     public override string GetStatus() {
         throw new NotImplementedException();
+    }
+
+    public override void Destringify() {
+
+    }
+
+    public override string Stringify() {
+        return $"c | {_pointValue} | {_goalName} | {_ending} | {_complete} | {_stepPoints} | {_count} | {_stepCount}";
     }
 }

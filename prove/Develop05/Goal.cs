@@ -5,7 +5,7 @@ public abstract class Goal
     protected int _pointValue;
     protected string _goalName;
     protected bool _ending;
-    public bool _complete;
+    protected bool _complete;
     public Goal(int pointValue, string goalName) {
         _pointValue = pointValue;
         _goalName = goalName;
@@ -23,4 +23,6 @@ public abstract class Goal
     public abstract void DisplayGoal();
     public abstract int MarkComplete();
     public abstract string GetStatus();
+    public abstract void Destringify();
+    public abstract string Stringify();
 }

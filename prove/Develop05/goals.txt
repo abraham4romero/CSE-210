@@ -1,0 +1,6 @@
+2000
+s | 500 | Eat a pineapple this week. | True | False
+e | 0 | Read my scriptures every day! | False | False | 250 | 3
+s | 1000 | Do a backflip | True | True
+c | 3000 | Memorize 5 scriptures. | True | False | 250 | 1 | 5
+s | 500 | Submit this assignment | True | False

@@ -23,7 +23,20 @@ public class Simple : Goal
         return _pointValue;
     }
 
+    public void SetVars(bool a, bool b) {
+        _ending = a;
+        _complete = b;
+    }
+
     public override string GetStatus() {
         throw new NotImplementedException();
+    }
+
+    public override void Destringify() {
+
+    }
+
+    public override string Stringify() {
+        return $"s | {_pointValue} | {_goalName} | {_ending} | {_complete}";  
     }
 }

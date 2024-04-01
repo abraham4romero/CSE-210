@@ -23,7 +23,21 @@ public class Eternal : Goal
         return _stepPoints;
     }
 
+    public void SetVars(bool a, bool b, int c) {
+        _ending = a;
+        _complete = b;
+        _count = c;
+    }
+
     public override string GetStatus() {
         throw new NotImplementedException();
+    }
+
+    public override void Destringify() {
+
+    }
+
+    public override string Stringify() {
+        return $"e | {_pointValue} | {_goalName} | {_ending} | {_complete} | {_stepPoints} | {_count}";
     }
 }

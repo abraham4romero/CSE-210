@@ -33,10 +33,10 @@ class Program
                     _points += gols.MarkComplete();
                     break;
                 case "4":
-                    //gols.LoadGoals();
+                    _points = gols.LoadGoals();
                     break;
                 case "5":
-                    //gols.SaveGoals();
+                    gols.SaveGoals(_points);
                     break;
                 case "6":
                     again = false;
