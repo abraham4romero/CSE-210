@@ -15,27 +15,29 @@ public class Goals
         }
     }
 
-    public int MarkComplete() {
+    public string MarkComplete() {
         Console.Clear();
         Console.WriteLine("Which goal would you like to report on?");
         DisplayGoals();
         int selection = int.Parse(Console.ReadLine());
         int p = goals[selection-1].MarkComplete();
+        int comp = 0;
         if (goals[selection-1].GetStatus() == true) {
-
+            comp = 1;
         }
         Console.WriteLine("");
         Console.WriteLine("Goal updated!");
         Thread.Sleep(500);
-        return p;
+        return $"{p} | {comp}";
     }
 
-    public int LoadGoals() {
+    public string LoadGoals() {
         int j = goals.Count();
         for (int i = 1; i <= j; i++) {
             goals.RemoveAt(0);
         }
         int points = 0;
+        int completedGoals = 0;
         Console.WriteLine("Which file would you like to pull from?");
         string file = Console.ReadLine();
         string[] text = System.IO.File.ReadAllLines(file);
@@ -47,14 +49,21 @@ public class Goals
                 if (variables[0] == "s") {
                     Simple s = new Simple(int.Parse(variables[1]), variables[2]);
                     s.SetVars(bool.Parse(variables[3]), bool.Parse(variables[4]));
+                    if (bool.Parse(variables[4]) == true) {
+                        completedGoals += 1;
+                    }
                     goals.Add(s);
                 } else if (variables[0] == "e") {       
                     Eternal e = new Eternal(int.Parse(variables[1]), int.Parse(variables[5]), variables[2]);
                     e.SetVars(bool.Parse(variables[3]), bool.Parse(variables[4]), int.Parse(variables[6]));
+                    completedGoals += int.Parse(variables[6]);
                     goals.Add(e);
                 } else if (variables[0] == "c") {
                     Checklist c = new Checklist(int.Parse(variables[1]), int.Parse(variables[5]), variables[2], int.Parse(variables[7]));
                     c.SetVars(bool.Parse(variables[3]), bool.Parse(variables[4]), int.Parse(variables[6]));
+                    if (bool.Parse(variables[4]) == true) {
+                        completedGoals += 1;
+                    }
                     goals.Add(c);
                 }
             }
@@ -63,7 +72,7 @@ public class Goals
         Console.WriteLine("");
         Console.WriteLine("Goals loaded.");
         Thread.Sleep(1500);
-        return points;
+        return $"{points} | {completedGoals}";
     }
 
     public void SaveGoals(int points) {

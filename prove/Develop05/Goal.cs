@@ -20,9 +20,8 @@ public abstract class Goal
         return _pointValue;
     }
 
+    public abstract bool GetStatus();
     public abstract void DisplayGoal();
     public abstract int MarkComplete();
-    public abstract string GetStatus();
-    public abstract void Destringify();
     public abstract string Stringify();
 }

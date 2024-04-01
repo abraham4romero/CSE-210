@@ -28,14 +28,10 @@ public class Simple : Goal
         _complete = b;
     }
 
-    public override string GetStatus() {
-        throw new NotImplementedException();
+    public override bool GetStatus() {
+        return _complete;
     }
-
-    public override void Destringify() {
-
-    }
-
+    
     public override string Stringify() {
         return $"s | {_pointValue} | {_goalName} | {_ending} | {_complete}";  
     }

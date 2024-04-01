@@ -29,12 +29,8 @@ public class Eternal : Goal
         _count = c;
     }
 
-    public override string GetStatus() {
-        throw new NotImplementedException();
-    }
-
-    public override void Destringify() {
-
+    public override bool GetStatus() {
+        return true;
     }
 
     public override string Stringify() {

@@ -3,7 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-    
     static void Main(string[] args)
     {
         Goals gols = new Goals();
@@ -32,10 +31,16 @@ class Program
                     Console.ReadLine();
                     break;
                 case "3":
-                    _points += gols.MarkComplete();
+                    string response = gols.MarkComplete();
+                    string[] splitted = response.Split(" | ");
+                    _points += int.Parse(splitted[0]);
+                    _goalsCompleted += int.Parse(splitted[1]);
                     break;
                 case "4":
-                    _points = gols.LoadGoals();
+                    string ss = gols.LoadGoals();
+                    string[] parts = ss.Split(" | ");
+                    _points = int.Parse(parts[0]);
+                    _goalsCompleted = int.Parse(parts[1]);
                     break;
                 case "5":
                     gols.SaveGoals(_points);
@@ -44,7 +49,9 @@ class Program
                     again = false;
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("Sorry, please try again.");
+                    Thread.Sleep(1000);
                     break;
             }            
         }
