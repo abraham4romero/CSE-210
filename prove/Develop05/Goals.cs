@@ -21,6 +21,9 @@ public class Goals
         DisplayGoals();
         int selection = int.Parse(Console.ReadLine());
         int p = goals[selection-1].MarkComplete();
+        if (goals[selection-1].GetStatus() == true) {
+
+        }
         Console.WriteLine("");
         Console.WriteLine("Goal updated!");
         Thread.Sleep(500);

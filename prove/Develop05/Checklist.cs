@@ -40,15 +40,7 @@ public class Checklist : Goal
         _complete = b;
         _count = c;
     }
-
-    public override string GetStatus() {
-        throw new NotImplementedException();
-    }
-
-    public override void Destringify() {
-
-    }
-
+    
     public override string Stringify() {
         return $"c | {_pointValue} | {_goalName} | {_ending} | {_complete} | {_stepPoints} | {_count} | {_stepCount}";
     }

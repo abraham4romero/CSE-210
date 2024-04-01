@@ -8,12 +8,14 @@ class Program
     {
         Goals gols = new Goals();
         int _points = 0;
+        int _goalsCompleted = 0;
         bool again = true;
 
         while (again) {
             string choice = "";
             Console.Clear();
             Console.WriteLine($"You have {_points} points.");
+            Console.WriteLine($"You have completed {_goalsCompleted} goals.");
             Console.WriteLine();
             Console.WriteLine("Please select an option");
             Console.WriteLine("1. New Goal\n2. Display Goals\n3. Update Goal\n4. Load\n5. Save\n6. Quit");
