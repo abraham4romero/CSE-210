@@ -3,7 +3,7 @@ using System;
 public class Subject
 {
     private string _name;
-    public List<StudyNote> _subjectNotes = new List<StudyNote>();
+    private List<StudyNote> _subjectNotes = new List<StudyNote>();
 
     public Subject(string n) {
         _name = n;

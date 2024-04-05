@@ -2,7 +2,7 @@ using System;
 
 public class Courses
 {
-    public List<Course> _classes = new List<Course>();
+    private List<Course> _classes = new List<Course>();
 
     public void Menu() {
         bool again = true;

@@ -2,7 +2,7 @@ using System;
 
 public class QuickNotes
 {
-    public List<Note> _notes = new List<Note>();
+    private List<Note> _notes = new List<Note>();
 
     public void Menu() {
         bool again = true;

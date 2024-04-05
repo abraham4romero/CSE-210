@@ -2,8 +2,8 @@ using System;
 
 public class ToDo
 {
-    public List<Item> _toDoList = new List<Item>();
-    public List<Item> _completedTasks = new List<Item>();
+    private List<Item> _toDoList = new List<Item>();
+    private List<Item> _completedTasks = new List<Item>();
 
     public void Menu() {
         bool again = true;

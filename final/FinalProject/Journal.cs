@@ -4,7 +4,7 @@ using System.Reflection.Metadata.Ecma335;
 
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    private List<Entry> _entries = new List<Entry>();
     private int _count = 1;
 
     public void Menu() {

@@ -3,7 +3,7 @@ using System;
 public class Course
 {
     private string _name;
-    public List<Subject> _subjects = new List<Subject>();
+    private List<Subject> _subjects = new List<Subject>();
 
     public Course(string n) {
         _name = n;
