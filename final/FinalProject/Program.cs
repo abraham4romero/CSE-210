@@ -20,7 +20,7 @@ class Program
             string choice = Console.ReadLine();
             switch (choice) {
                 case "1":
-
+                    _courses.Menu();
                     break;
                 case "2":
                     _journal.Menu();

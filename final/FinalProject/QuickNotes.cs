@@ -19,6 +19,8 @@ public class QuickNotes
                     break;
                 case "2":
                     DisplayNotes();
+                    Console.WriteLine("Press \"enter\" to go back:");
+                    Console.ReadLine();
                     break;
                 case "3":
                     DeleteNote();
@@ -36,17 +38,41 @@ public class QuickNotes
     }
 
     public void NewNote() {
-
+        Console.Clear();
+        Console.WriteLine("Please enter your note below and hit \"enter\" when done:");
+        string input = Console.ReadLine();
+        QuickNote n = new QuickNote(input);
+        _notes.Add(n);
+        Console.Clear();
+        Console.WriteLine("Note saved.");
+        Thread.Sleep(1000);
     }
 
     public void DisplayNotes() {
         Console.Clear();
-        foreach (Note n in _notes) {
-            n.Text();
+        if (_notes.Count > 0) {
+            int x = 1;
+            foreach (Note n in _notes) {
+                Console.Write($"{x}. ");
+                n.Print();
+                x++;
+            }
+        } else {
+            Console.WriteLine("You have no notes.");
+            Console.WriteLine("");
         }
     }
 
     public void DeleteNote() {
-
+        DisplayNotes();
+        if (_notes.Count > 0) {
+            Console.WriteLine("");
+            Console.WriteLine("Which note would you like to delete?");
+            int deletionChoice = int.Parse(Console.ReadLine());
+            _notes.RemoveAt(deletionChoice-1);
+            Console.Clear();
+            Console.WriteLine("Note deleted.");
+        }
+        Thread.Sleep(1000);
     }
 }

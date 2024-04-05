@@ -24,7 +24,7 @@ public class Journal
                     DisplayEntries();
                     break;
                 case "3":
-                    //EditEntry();
+                    EditEntry();
                     break;
                 case "4":
                     again = false;
@@ -52,13 +52,39 @@ public class Journal
 
     public void DisplayEntries() {
         Console.Clear();
-        foreach (Entry entry in _entries) {
-            entry.Print();
+        if (_entries.Count() != 0) {
+            foreach (Entry entry in _entries) {
+                entry.Print();
+                Console.WriteLine("");
+                Thread.Sleep(100);
+            }
             Console.WriteLine("");
-            Thread.Sleep(100);
+        } else {
+            Console.WriteLine("There are no entries to display.");
         }
         Console.WriteLine("");
         Console.WriteLine("Press \"enter\" to go back.");
         Console.ReadLine();
+    }
+
+    public void EditEntry() {
+        Console.Clear();
+        if (_entries.Count != 0) {
+            int x = 1;
+            foreach (Entry entry in _entries) {
+                Console.Write($"{x}. ");
+                entry.Print();
+                x++;
+                Console.WriteLine("");
+                Thread.Sleep(100);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Which entry would you like to edit?");
+            int a = int.Parse(Console.ReadLine());
+            _entries[a-1].EditText();
+        } else {
+            Console.WriteLine("There are no entries to edit.");
+        }
+        Thread.Sleep(1000);
     }
 }

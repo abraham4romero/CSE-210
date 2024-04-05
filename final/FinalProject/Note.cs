@@ -8,13 +8,5 @@ public abstract class Note
         _text = t;
     }
 
-    public void SetText(string t) {
-        _text = t;
-    }
-
-    public string Text() {
-        return _text;
-    }
-
     public abstract void Print();
 }

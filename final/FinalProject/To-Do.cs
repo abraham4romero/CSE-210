@@ -36,7 +36,6 @@ public class ToDo
                     break;
             }
         }
-        
     }
 
     public void NewTask() {
@@ -83,7 +82,7 @@ public class ToDo
         Console.Clear();
         int x = 1;
         if (_toDoList.Count() == 0) {
-            Console.WriteLine("Your list is empty.");
+            Console.WriteLine("There aren't any tasks on your To-Do List.");
         } else {
             foreach (Item i in _toDoList) {
                 Console.Write($"{x}. ");
@@ -97,8 +96,9 @@ public class ToDo
             _toDoList[input-1].Complete();
             _completedTasks.Add(_toDoList[input-1]);
             _toDoList.RemoveAt(input-1);
+            Console.Clear();
             Console.WriteLine("Task updated.");
         }
-        Thread.Sleep(1000);
+        Thread.Sleep(1500);
     }
 }

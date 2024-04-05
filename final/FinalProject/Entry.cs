@@ -17,4 +17,15 @@ public class Entry : Note
         Console.WriteLine($"Weather: {_weather}");
         Console.WriteLine(_text);
     }
+
+    public void EditText() {
+        Console.Clear();
+        Console.WriteLine("Your entry currently says:");
+        Console.WriteLine(_text);
+        Console.WriteLine("");
+        Console.WriteLine("What would you like to replace it with?");
+        _text = Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("Entry updated.");
+    }
 }
